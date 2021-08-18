@@ -62,4 +62,18 @@ public class DBConnection {
     public ResultSet viewAllProducts() {
         return sendSQL("");
     }
+    public int getUserPoints(int userid)
+    {
+        int result = -1;
+        String sql = "SELECT points FROM Users WHERE userid="+ String.valueOf(userid);
+        try (Statement stmt = this.con.createStatement()) {
+            ResultSet rs = stmt.executeQuery(sql);
+            if(rs.next()){
+                result = rs.getInt(1);
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+        return result;
+    }
 }

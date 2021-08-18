@@ -35,6 +35,10 @@ public class Products {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    public int getQuantity() {
+        return quantity;
+    }
     
     public static ArrayList<Products> getAllProducts(){
         ResultSet rs = DBConnection.getInstance().viewAllProducts();
