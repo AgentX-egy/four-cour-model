@@ -22,14 +22,14 @@
       </TextField>
       <TextField layoutY="347.0" prefHeight="49.0" prefWidth="289.0" promptText="E-mail / Username" style="-fx-background-color: #cfeefb;" stylesheets="@textColor.css" AnchorPane.leftAnchor="50.0" />
       <PasswordField layoutX="451.0" layoutY="347.0" prefHeight="49.0" prefWidth="289.0" promptText="Password" style="-fx-background-color: #cfeefb;" stylesheets="@textColor.css" AnchorPane.rightAnchor="50.0" />
-      <Button layoutX="239.0" layoutY="430.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="263.0" style="-fx-background-color: #cfeefb;" text="Update" textFill="#e1056f">
+      <Button layoutX="63.0" layoutY="430.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="263.0" style="-fx-background-color: #cfeefb;" text="Update" textFill="#e1056f">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="704.0" layoutY="-5.0" mnemonicParsing="false" onAction="#handleExitButtonAction" style="-fx-background-color: #0a0a47;" text="X" textFill="#cfeefb">
+      <Button layoutX="414.0" layoutY="430.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="263.0" style="-fx-background-color: #cfeefb;" text="Back" onAction="#GoBack" textFill="#e1056f">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold Italic" size="18.0" />
          </font>
       </Button>
    </children>

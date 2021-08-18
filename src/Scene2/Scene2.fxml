@@ -22,7 +22,7 @@
                   <Insets right="50.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #e1056f;" text="Products" textFill="#cfeefb">
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #e1056f;" text="Products" onAction ="#GoToProducts" textFill="#cfeefb">
                <HBox.margin>
                   <Insets right="50.0" />
                </HBox.margin>
@@ -30,7 +30,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #e1056f;" text="Purchases" textFill="#cfeefb">
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #e1056f;" text="Purchases" onAction="#GoToPurchases" textFill="#cfeefb">
                <HBox.margin>
                   <Insets right="50.0" />
                </HBox.margin>

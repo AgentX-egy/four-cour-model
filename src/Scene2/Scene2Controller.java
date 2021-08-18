@@ -53,6 +53,44 @@ public class Scene2Controller implements Initializable {
         }
     }
     
+    @FXML
+    private void GoToProducts(ActionEvent event){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/Products/products.fxml"));
+            Scene scene = new Scene(root);
+            
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            // OR
+//            Stage stageTheLabelBelongs = (Stage) label.getScene().getWindow();
+            // these two of them return the same stage
+            // Swap screen
+            stage.setTitle("Profile");
+            stage.setScene(scene);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    private void GoToPurchases(ActionEvent event){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/Purchases/purchases.fxml"));
+            Scene scene = new Scene(root);
+            
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            // OR
+//            Stage stageTheLabelBelongs = (Stage) label.getScene().getWindow();
+            // these two of them return the same stage
+            // Swap screen
+            stage.setTitle("Profile");
+            stage.setScene(scene);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

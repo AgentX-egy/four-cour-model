@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package onlineshop;
+package Purchases;
 
+import Products.*;
+import onlineshop.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,7 +27,7 @@ import javafx.stage.Stage;
  *
  * @author kerol
  */
-public class FXMLDocumentController implements Initializable {
+public class PurchasesController implements Initializable {
    
     
     @FXML
@@ -34,7 +36,7 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private void GotoSecond(ActionEvent event) throws IOException{
+    private void GoBack(ActionEvent event) throws IOException{
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/Scene2/Scene2.fxml"));
             Scene scene = new Scene(root);
@@ -48,7 +50,7 @@ public class FXMLDocumentController implements Initializable {
             stage.setScene(scene);
             
         } catch (IOException ex) {
-            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PurchasesController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
