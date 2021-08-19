@@ -9,11 +9,13 @@ package Model;
  *
  * @author Zezuh
  */
-public class User 
+public class User {
 
-{
-    private int userid ;
+    private int userid;
     private String username;
     private int points;
-   
+
+    public User(int userid) {
+
+    }
 }

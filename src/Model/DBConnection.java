@@ -5,22 +5,28 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 public class DBConnection {
+
     private static DBConnection singleton = null;
     private Connection con;
 
     private DBConnection(String SQLHost, String SQLPortNum, String SQLName) {
         try {
-            this.con = DriverManager.getConnection("jdbc:mysql://" + SQLHost + ":" + SQLPortNum + "/" + SQLName);
+            this.con = DriverManager.getConnection(
+                    "jdbc:mysql://" + SQLHost + ":" + SQLPortNum + "/" + SQLName
+                    ,"zykerA", "1234");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
     }
 
-    public static DBConnection createInstance(String SQLHost, String SQLPortNum, String SQLName) {
+    public static DBConnection createInstance(
+            String SQLHost, String SQLPortNum, String SQLName) {
         if (DBConnection.singleton == null) {
-            DBConnection.singleton = new DBConnection(SQLHost, SQLPortNum, SQLName);
+            DBConnection.singleton = new DBConnection(
+                    SQLHost, SQLPortNum, SQLName);
             return singleton;
         } else {
             return singleton;
@@ -45,12 +51,45 @@ public class DBConnection {
         return null;
     }
 
-    public int getProductQuantity(int productID){
+    public int getUserID(String username, String password) {
         int result = -1;
-        String sql = "SELECT quantity FROM products WHERE productID="+ String.valueOf(productID);
+        String query = "SELECT userID from users WHERE UserName Like ? AND Password Like ? ;";
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                result = rs.getInt("userID");
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());;
+        }
+        return result;
+    }
+
+    public int getProductQuantity(int productID) {
+        int result = -1;
+        String sql = "SELECT quantity FROM products WHERE productID="
+                + String.valueOf(productID);
         try (Statement stmt = this.con.createStatement()) {
             ResultSet rs = stmt.executeQuery(sql);
-            if(rs.next()){
+            if (rs.next()) {
+                result = rs.getInt(1);
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+        return result;
+    }
+
+    public int getUserPoints(int userID) {
+        int result = -1;
+        String sql = "SELECT points FROM Users WHERE userID=" 
+                + String.valueOf(userID);
+        try (Statement stmt = this.con.createStatement()) {
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs.next()) {
                 result = rs.getInt(1);
             }
         } catch (Exception e) {
@@ -60,20 +99,11 @@ public class DBConnection {
     }
 
     public ResultSet viewAllProducts() {
-        return sendSQL("");
+        return sendSQL("SELECT * FROM products");
     }
-    public int getUserPoints(int userid)
-    {
-        int result = -1;
-        String sql = "SELECT points FROM Users WHERE userid="+ String.valueOf(userid);
-        try (Statement stmt = this.con.createStatement()) {
-            ResultSet rs = stmt.executeQuery(sql);
-            if(rs.next()){
-                result = rs.getInt(1);
-            }
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-        }
-        return result;
+
+    public ResultSet viewProductByID(int productID) {
+        return sendSQL("SELECT * FROM products WHERE productID=" 
+                + String.valueOf(productID));
     }
 }

@@ -5,6 +5,7 @@
  */
 package onlineshop;
 
+import Model.DBConnection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -36,6 +37,7 @@ public class OnlineShop extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        DBConnection.createInstance("localhost", "3306", "assignment2");
         launch(args);
     }
     

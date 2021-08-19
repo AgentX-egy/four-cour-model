@@ -11,21 +11,31 @@ import java.util.Map;
  *
  * @author Zezuh
  */
-public class Purchases
-{
-private Map<Integer ,Products> cart;
+public class Purchases {
 
+    private Map<Integer, Products> cart;
 
- public int getTotal()
- {
-     int T =0;
-     for (Map.Entry<Integer ,Products> entry : cart.entrySet())
-         T = entry.getValue().getPrice()*entry.getValue().getQuantity();
-  
-     return T;
-     
- }
- 
- }
+    public void addToCart(int productID) {
+        if (cart.containsKey(productID)) {
+            cart.get(productID).quantityUp();
+        } else {
+            cart.put(productID, Products.getProductByID(productID));
+        }
+    }
 
-
+    public int getTotalPrice() {
+        int total = 0;
+        for (Map.Entry<Integer, Products> entry : cart.entrySet()) {
+            total = entry.getValue().getPrice() * entry.getValue().getQuantity();
+        }
+        return total;
+    }
+    
+    public int viewCartPoints() {
+        return getTotalPrice() / 100;
+    }
+    
+    public void pay(){
+        
+    }
+}
