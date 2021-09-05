@@ -24,7 +24,7 @@ public class OnlineShop extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         stage.setTitle("Login Page");
         
-        stage.initStyle(StageStyle.UNDECORATED);
+        stage.initStyle(StageStyle.DECORATED);
         
         Scene scene = new Scene(root);
         

@@ -19,7 +19,7 @@ public class TestModel {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        DBConnection.createInstance("localhost", "3306", "assignment2");
+        DBConnection.createInstance("41.237.128.248", "3306", "assignment2");
         String username = null;
         String password = null;
         int userID = -1;

@@ -5,9 +5,11 @@
  */
 package Scene2;
 
+import Model.Products;
 import Scene2.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,10 +17,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import onlineshop.FXMLDocumentController;
 
@@ -39,12 +47,7 @@ public class Scene2Controller implements Initializable {
     try {
             Parent root = FXMLLoader.load(getClass().getResource("/ProfileScene/profileScene.fxml"));
             Scene scene = new Scene(root);
-            
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            // OR
-//            Stage stageTheLabelBelongs = (Stage) label.getScene().getWindow();
-            // these two of them return the same stage
-            // Swap screen
             stage.setTitle("Profile");
             stage.setScene(scene);
             
@@ -54,16 +57,44 @@ public class Scene2Controller implements Initializable {
     }
     
     @FXML
+    Button btn;
+    
+    @FXML
     private void GoToProducts(ActionEvent event){
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/Products/products.fxml"));
             Scene scene = new Scene(root);
             
+            ArrayList<Products> allProducts = Model.Products.getAllProducts();
+            System.out.println(allProducts.size());
+            int row = 0;
+            int col = 0;
+            for(int i = 0; i < allProducts.size();i++){
+                if((i%2 == 0) && (i != 0) )
+                {
+                    row++;
+                    col =0;
+                }
+                btn = new Button(allProducts.get(i).getName());
+                
+                btn.setMinWidth((((GridPane)scene.lookup("#dynamicGrid")).getPrefWidth() - 5)/2 - 5);
+                btn.setMinHeight(((GridPane)scene.lookup("#dynamicGrid")).getPrefHeight()/allProducts.size());
+                btn.setStyle("-fx-background-color: #cfeefb;-fx-font-size : 18px;-fx-text-fill:#e1056f;");
+                
+                btn.setAlignment(Pos.CENTER);
+//                btn.autosize();
+                
+                ((GridPane)scene.lookup("#dynamicGrid")).add(btn, col++, row);
+                ((GridPane)scene.lookup("#dynamicGrid")).autosize();
+                ((GridPane)scene.lookup("#dynamicGrid")).setAlignment(Pos.CENTER);
+
+            }
+            
+            
+//            scene.getStylesheets().add(getClass().getResource("Products/buttonStyle.css").toExternalForm());
+            
+            
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            // OR
-//            Stage stageTheLabelBelongs = (Stage) label.getScene().getWindow();
-            // these two of them return the same stage
-            // Swap screen
             stage.setTitle("Profile");
             stage.setScene(scene);
             

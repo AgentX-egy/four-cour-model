@@ -51,9 +51,9 @@
             </Text>
             <AnchorPane layoutX="282.0" layoutY="42.0" prefHeight="337.0" prefWidth="337.0" style="-fx-background-color: #cfeefb;" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="282.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="42.0">
                <children>
-                  <PasswordField layoutX="50.0" layoutY="138.0" prefHeight="36.0" prefWidth="250.0" promptText="Password" AnchorPane.bottomAnchor="156.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="138.0" />
-                  <Button layoutX="50.0" layoutY="222.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #0a0a47;" text="Login"  onAction="#GotoSecond"   textFill="#cfeefb" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="222.0" />
-                  <TextField layoutX="50.0" layoutY="72.0" prefHeight="36.0" prefWidth="250.0" promptText="E-mail / Username" AnchorPane.bottomAnchor="222.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="72.0" />
+                  <PasswordField fx:id="pass_txt" layoutX="50.0" layoutY="138.0" prefHeight="36.0" prefWidth="250.0" promptText="Password" AnchorPane.bottomAnchor="156.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="138.0" />
+                  <Button  layoutX="50.0" layoutY="222.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #0a0a47;" text="Login"  onAction="#Login"   textFill="#cfeefb" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="222.0" />
+                  <TextField fx:id="username_txt" layoutX="50.0" layoutY="72.0" prefHeight="36.0" prefWidth="250.0" promptText="E-mail / Username" AnchorPane.bottomAnchor="222.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="72.0" />
                </children>
             </AnchorPane>
             <Button fx:id="ext_btn"  onAction="#handleExitButtonAction" layoutX="586.0" minHeight="16.0" minWidth="37.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="54.0" style="-fx-background-color: #0A0A47;" text="X" textFill="#cfeefb" />

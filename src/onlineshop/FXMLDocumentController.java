@@ -5,6 +5,7 @@
  */
 package onlineshop;
 
+import Model.DBConnection;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,6 +19,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
@@ -28,6 +30,8 @@ import javafx.stage.Stage;
 public class FXMLDocumentController implements Initializable {
    
     
+  
+   
     @FXML
     private void handleExitButtonAction(ActionEvent event){
         System.exit(0);
@@ -40,10 +44,6 @@ public class FXMLDocumentController implements Initializable {
             Scene scene = new Scene(root);
             
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            // OR
-//            Stage stageTheLabelBelongs = (Stage) label.getScene().getWindow();
-            // these two of them return the same stage
-            // Swap screen
             stage.setTitle("Home");
             stage.setScene(scene);
             
@@ -52,10 +52,32 @@ public class FXMLDocumentController implements Initializable {
         }
     }
     
+    @FXML
+    private void Login(ActionEvent event) throws IOException{
+        
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene parentScene = stage.getScene();
+        String username = ((TextField)parentScene.lookup("#username_txt")).getText();
+        String password = ((TextField)parentScene.lookup("#pass_txt")).getText();
+        System.out.println(username);
+        System.out.println(password);        
+        DBConnection.createInstance("41.237.128.248", "3306", "assignment2");
+        int id = DBConnection.getInstance().getUserID(username, password);
+        
+        if(id != -1){
+            GotoSecond(event);
+        }
+        else{
+            System.out.println("wrong username and password");
+        }
+        
+        
+    }
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }    
     
 }
