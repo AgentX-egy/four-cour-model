@@ -61,7 +61,7 @@ public class FXMLDocumentController implements Initializable {
         String password = ((TextField)parentScene.lookup("#pass_txt")).getText();
         System.out.println(username);
         System.out.println(password);        
-        DBConnection.createInstance("41.237.128.248", "3306", "assignment2");
+        DBConnection.createInstance("197.46.92.128", "3306", "assignment2");
         int id = DBConnection.getInstance().getUserID(username, password);
         
         if(id != -1){

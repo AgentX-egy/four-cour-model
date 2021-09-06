@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="OnlineShop.jar" size="102419" download="eager" />
+    <jar href="OnlineShop.jar" size="102417" download="eager" />
     <jar href="lib\jfoenix-9.0.10.jar" size="2432549" download="eager" />
     <jar href="lib\mysql-connector-java-8.0.26.jar" size="2462364" download="eager" />
   </resources>
