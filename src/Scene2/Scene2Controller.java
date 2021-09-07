@@ -38,8 +38,23 @@ public class Scene2Controller implements Initializable {
    
     
     @FXML
-    private void handleExitButtonAction(ActionEvent event){
-        System.exit(0);
+    private void SignOut(ActionEvent event)
+    {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/onlineshop/FXMLDocument.fxml"));
+            Scene scene = new Scene(root);
+            
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            // OR
+//            Stage stageTheLabelBelongs = (Stage) label.getScene().getWindow();
+            // these two of them return the same stage
+            // Swap screen
+            stage.setTitle("Sign in");
+            stage.setScene(scene);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Scene2Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     @FXML
@@ -60,12 +75,12 @@ public class Scene2Controller implements Initializable {
     Button btn;
     
     @FXML
-    private void GoToProducts(ActionEvent event){
+    private void GoToOrphans(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/Products/products.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/OrphanScreen/orphans.fxml"));
             Scene scene = new Scene(root);
             
-            ArrayList<Products> allProducts = Model.Products.getAllProducts();
+            /*ArrayList<Products> allProducts = Model.Products.getAllProducts();
             System.out.println(allProducts.size());
             int row = 0;
             int col = 0;
@@ -89,7 +104,7 @@ public class Scene2Controller implements Initializable {
                 ((GridPane)scene.lookup("#dynamicGrid")).setAlignment(Pos.CENTER);
 
             }
-            
+            */
             
 //            scene.getStylesheets().add(getClass().getResource("Products/buttonStyle.css").toExternalForm());
             
@@ -104,9 +119,9 @@ public class Scene2Controller implements Initializable {
     }
     
     @FXML
-    private void GoToPurchases(ActionEvent event){
+    private void GoToDonations(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/Purchases/purchases.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/DonationScreen/donations.fxml"));
             Scene scene = new Scene(root);
             
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

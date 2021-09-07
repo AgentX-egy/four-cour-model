@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Products;
+package OrphanScreen;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,7 +23,7 @@ import javafx.stage.Stage;
  *
  * @author kerol
  */
-public class ProductsController implements Initializable {
+public class OrphansController implements Initializable {
 
     @FXML
     private void handleExitButtonAction(ActionEvent event) {
@@ -45,7 +45,7 @@ public class ProductsController implements Initializable {
             stage.setScene(scene);
 
         } catch (IOException ex) {
-            Logger.getLogger(ProductsController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OrphansController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

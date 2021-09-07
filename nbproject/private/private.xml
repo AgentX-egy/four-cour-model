@@ -3,9 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/kerol/Documents/GitHub/four-cour-model/src/DonationScreen/donations.fxml</file>
+            <file>file:/C:/Users/kerol/Documents/GitHub/four-cour-model/src/Scene2/Scene2.fxml</file>
             <file>file:/C:/Users/kerol/Documents/GitHub/four-cour-model/src/onlineshop/FXMLDocumentController.java</file>
             <file>file:/C:/Users/kerol/Documents/GitHub/four-cour-model/src/onlineshop/FXMLDocument.fxml</file>
+            <file>file:/C:/Users/kerol/Documents/GitHub/four-cour-model/src/Scene2/Scene2Controller.java</file>
             <file>file:/C:/Users/kerol/Documents/GitHub/four-cour-model/src/onlineshop/OnlineShop.java</file>
+            <file>file:/C:/Users/kerol/Documents/GitHub/four-cour-model/src/OrphanScreen/orphans.fxml</file>
+            <file>file:/C:/Users/kerol/Documents/GitHub/four-cour-model/src/RegisterScreen/RegisterController.java</file>
+            <file>file:/C:/Users/kerol/Documents/GitHub/four-cour-model/src/RegisterScreen/register.fxml</file>
+            <file>file:/C:/Users/kerol/Documents/GitHub/four-cour-model/src/OrphanScreen/OrphansController.java</file>
         </group>
     </open-files>
 </project-private>

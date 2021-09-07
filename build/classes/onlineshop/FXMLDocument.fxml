@@ -44,19 +44,28 @@
   <children>
     <AnchorPane prefHeight="687.0" prefWidth="650.0" style="-fx-background-color: #0A0A47;" VBox.vgrow="ALWAYS">
          <children>
-            <Text fill="#cfeefb" layoutX="64.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to our online shop" wrappingWidth="119.13671875" AnchorPane.bottomAnchor="191.955078125" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="456.86328125" AnchorPane.topAnchor="98.259765625">
+            <Text fill="#cfeefb" layoutX="24.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Orphan Adoption Center" wrappingWidth="206.13671875" AnchorPane.bottomAnchor="141.310546875" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="426.86328125" AnchorPane.topAnchor="154.943359375">
                <font>
-                  <Font size="22.0" />
+                  <Font size="26.0" />
                </font>
             </Text>
             <AnchorPane layoutX="282.0" layoutY="42.0" prefHeight="337.0" prefWidth="337.0" style="-fx-background-color: #cfeefb;" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="282.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="42.0">
                <children>
                   <PasswordField fx:id="pass_txt" layoutX="50.0" layoutY="138.0" prefHeight="36.0" prefWidth="250.0" promptText="Password" AnchorPane.bottomAnchor="156.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="138.0" />
-                  <Button  layoutX="50.0" layoutY="222.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #0a0a47;" text="Login"  onAction="#Login"   textFill="#cfeefb" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="222.0" />
+                  <Button layoutX="50.0" layoutY="222.0" mnemonicParsing="false" onAction="#GotoSecond" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #0a0a47;" text="Login" textFill="#cfeefb" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="222.0" />
                   <TextField fx:id="username_txt" layoutX="50.0" layoutY="72.0" prefHeight="36.0" prefWidth="250.0" promptText="E-mail / Username" AnchorPane.bottomAnchor="222.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="72.0" />
+                  <Button alignment="BASELINE_LEFT" layoutX="138.0" layoutY="271.0" mnemonicParsing="false" onAction="#GotoRegister" prefHeight="24.0" prefWidth="164.0" style="-fx-background-color: #cfeefb;" text="Register." textFill="#e1056f">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Text fill="#0a0a47" layoutX="55.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Not a user?  " wrappingWidth="113.99999999999989">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
-            <Button fx:id="ext_btn"  onAction="#handleExitButtonAction" layoutX="586.0" minHeight="16.0" minWidth="37.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="54.0" style="-fx-background-color: #0A0A47;" text="X" textFill="#cfeefb" />
          </children>
     </AnchorPane>
   </children>

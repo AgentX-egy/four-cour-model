@@ -9,12 +9,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="764.0" style="-fx-background-color: #0a0a47;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scene2.Scene2Controller">
    <children>
       <HBox layoutX="-3.0" layoutY="478.0" prefHeight="100.0" prefWidth="770.0" style="-fx-background-color: #cfeefb;">
          <children>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #e1056f;" text="Profile"   onAction="#GoToProfile"  textFill="#cfeefb" textOverrun="CENTER_WORD_ELLIPSIS">
+            <Button fx:id="profile_btn" mnemonicParsing="false" onAction="#GoToProfile" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #e1056f;" text="Profile" textFill="#cfeefb" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font size="18.0" />
                </font>
@@ -22,7 +21,7 @@
                   <Insets right="50.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #e1056f;" text="Products" onAction ="#GoToProducts" textFill="#cfeefb">
+            <Button fx:id="orph_btn" mnemonicParsing="false" onAction="#GoToOrphans" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #e1056f;" text="Orphans" textFill="#cfeefb">
                <HBox.margin>
                   <Insets right="50.0" />
                </HBox.margin>
@@ -30,7 +29,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #e1056f;" text="Purchases" onAction="#GoToPurchases" textFill="#cfeefb">
+            <Button fx:id="don_btn" mnemonicParsing="false" onAction="#GoToDonations" prefHeight="50.0" prefWidth="134.0" style="-fx-background-color: #e1056f;" text="Donatations" textFill="#cfeefb">
                <HBox.margin>
                   <Insets right="50.0" />
                </HBox.margin>
@@ -38,7 +37,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #e1056f;" text="Exit" textFill="#cfeefb"  onAction="#handleExitButtonAction">
+            <Button fx:id="signout_btn" mnemonicParsing="false" onAction="#SignOut" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #e1056f;" text="Sign out" textFill="#cfeefb">
                <font>
                   <Font size="18.0" />
                </font>
@@ -48,9 +47,9 @@
             <Insets left="70.0" top="25.0" />
          </padding>
       </HBox>
-      <TextField editable="false" layoutX="42.0" layoutY="14.0" prefHeight="50.0" prefWidth="415.0" style="-fx-background-color: #0a0a47;" stylesheets="@textColor.css" text="Hi, What shall we do next ? ">
+      <TextField editable="false" layoutX="42.0" layoutY="14.0" prefHeight="50.0" prefWidth="415.0" style="-fx-background-color: #0a0a47;" stylesheets="@textColor.css" text="Hi, we are here to bring you a family. ">
          <font>
-            <Font size="24.0" />
+            <Font name="Agency FB" size="24.0" />
          </font>
       </TextField>
       <ImageView fitHeight="380.0" fitWidth="680.0" layoutX="42.0" layoutY="65.0">

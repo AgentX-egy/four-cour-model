@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Purchases;
+package DonationScreen;
 
-import Products.*;
 import onlineshop.*;
 import java.io.IOException;
 import java.net.URL;
@@ -27,7 +26,7 @@ import javafx.stage.Stage;
  *
  * @author kerol
  */
-public class PurchasesController implements Initializable {
+public class DonationsController implements Initializable {
    
     
     @FXML
@@ -50,7 +49,7 @@ public class PurchasesController implements Initializable {
             stage.setScene(scene);
             
         } catch (IOException ex) {
-            Logger.getLogger(PurchasesController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DonationsController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

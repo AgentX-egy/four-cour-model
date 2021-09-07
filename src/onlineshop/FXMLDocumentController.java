@@ -18,7 +18,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -35,6 +34,23 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleExitButtonAction(ActionEvent event){
         System.exit(0);
+    }
+    
+    @FXML
+    private void GotoRegister(ActionEvent event){
+        try {
+           
+            Parent root = FXMLLoader.load(getClass().getResource("/RegisterScreen/register.fxml"));
+//            Parent root = FXMLLoader.load(getClass().getResource("/Register/register.fxml"));
+            Scene scene = new Scene(root);
+            
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage.setTitle("Register");
+            stage.setScene(scene);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     @FXML
@@ -63,6 +79,9 @@ public class FXMLDocumentController implements Initializable {
         System.out.println(password);        
         DBConnection.createInstance("197.46.92.128", "3306", "assignment2");
         int id = DBConnection.getInstance().getUserID(username, password);
+        
+        
+        
         
         if(id != -1){
             GotoSecond(event);
