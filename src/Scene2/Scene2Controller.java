@@ -14,7 +14,10 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,6 +27,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -87,14 +92,18 @@ public class Scene2Controller implements Initializable {
             int row = 0;
             int col = 0;
             for(int i = 0; i < allOrphans.size();i++){
-                if((i%2 == 0) && (i != 0) )
+                if((i%3 == 0) && (i != 0) )
                 {
                     row++;
                     col =0;
                 }
-                btn = new Button(allOrphans.get(i).getName());
+                btn = new Button("Name: " + allOrphans.get(i).getName());
+                Button btn2 = new Button("Age: "+String.valueOf(allOrphans.get(i).getAge()));
+                CheckBox check = new CheckBox("is Male: ");
+                check.setSelected(allOrphans.get(i).isIsMale());
                 
-                btn.setMinWidth((((GridPane)scene.lookup("#dynamicGrid")).getPrefWidth() - 5)/2 - 5);
+                                    
+                btn.setMinWidth((((GridPane)scene.lookup("#dynamicGrid")).getPrefWidth() - 5)/3 - 5);
                 btn.setMinHeight(((GridPane)scene.lookup("#dynamicGrid")).getPrefHeight()/allOrphans.size());
                 btn.setStyle("-fx-background-color: #cfeefb;-fx-font-size : 18px;-fx-text-fill:#e1056f;");
                 
@@ -124,12 +133,7 @@ public class Scene2Controller implements Initializable {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/DonationScreen/donations.fxml"));
             Scene scene = new Scene(root);
-            
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            // OR
-//            Stage stageTheLabelBelongs = (Stage) label.getScene().getWindow();
-            // these two of them return the same stage
-            // Swap screen
             stage.setTitle("Profile");
             stage.setScene(scene);
             

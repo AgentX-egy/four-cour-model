@@ -28,6 +28,12 @@ public class Orphans {
     public int getAge() {
         return age;
     }
+
+    public boolean isIsMale() {
+        return isMale;
+    }
+    
+    
     
     public static ArrayList<Orphans> getAllOrphans(){
         ResultSet rs = Orphans.viewAllOrphans();

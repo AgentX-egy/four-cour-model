@@ -7,16 +7,24 @@ package DonationScreen;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
@@ -52,9 +60,71 @@ public class DonationsController implements Initializable {
     }
     
     
+    @FXML
+    private void Donate(){
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/Scene2/Scene2.fxml"));
+            Scene scene = new Scene(root);
+            //this make sure that only digits are accepted
+            
+
+               
+        } catch (IOException ex) {
+            Logger.getLogger(DonationsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    private void ShowSecondCombo(String value){
+        
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/Scene2/Scene2.fxml"));
+            Scene scene = new Scene(root);
+            
+            int quantity = Integer.valueOf(((TextField)scene.lookup("quantity_txt")).getText().toString());
+            String DonationType = ((ComboBox)scene.lookup("don_ops")).getValue().toString();
+            Model.Donation.makeDonation(DonationType, quantity);
+            
+//            ((ComboBox)scene.lookup("don_ops")).setItems();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(DonationsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/DonationScreen/donations.fxml"));
+            Scene scene = new Scene(root);
+            
+            
+            ((TextField)scene.lookup("quantity_txt")).textProperty().addListener(new ChangeListener<String>() {
+                    @Override
+                    public void changed(ObservableValue<? extends String> observable, String oldValue, 
+                    String newValue) {
+                    if (!newValue.matches("\\d*")) {
+                    ((TextField)scene.lookup("quantity_txt")).setText(newValue.replaceAll("[^\\d]", ""));
+                    }}});
+            
+            
+            ArrayList<Model.Donation> donationTypes = Model.Donation.getAllDonationTypes();
+            ((ComboBox)scene.lookup("don_type")).setItems((ObservableList) donationTypes);
+            
+            EventHandler handler = new EventHandler() {
+                @Override
+                public void handle(Event event) {
+                    String value = ((ComboBox)scene.lookup("don_type")).getValue().toString();
+                    ArrayList<Model.DonationOptions> options = Model.Donation.getAllDonationOptions(value);
+                    ((ComboBox)scene.lookup("don_ops")).setItems((ObservableList) options);
+                }
+            };
+        } catch (IOException ex) {
+            Logger.getLogger(DonationsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }    
     
 }

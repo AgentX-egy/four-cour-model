@@ -32,30 +32,41 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="789.0" style="-fx-background-color: #0a0a47;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DonationScreen.DonationsController">
    <children>
-      <ButtonBar layoutY="497.0" prefHeight="47.0" prefWidth="789.0" style="-fx-background-color: #cfeefb;">
-         <buttons>
-            <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="106.0" style="-fx-background-color: #0a0a47;" text="Back" onAction="#GoBack" textFill="#e1056f">
-               <font>
-                  <Font name="System Bold Italic" size="18.0" />
-               </font>
-            </Button>
-         </buttons>
-         <padding>
-            <Insets right="50.0" />
-         </padding>
-      </ButtonBar>
-      <Button layoutX="753.0" mnemonicParsing="false" style="-fx-background-color: #0a0a47;" text="X" textFill="#cfeefb">
+      <Text fill="#e1056f" layoutX="38.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donation Type:" wrappingWidth="176.13671875">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fill="#e1056f" layoutX="38.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donation options:" wrappingWidth="193.13671875">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="don_type" layoutX="245.0" onAction="#ShowSecondCombo" layoutY="123.0" prefWidth="150.0" style="-fx-background-color: #cfeefb;" />
+      <ComboBox fx:id="don_ops" layoutX="245.0" layoutY="214.0" prefWidth="150.0" style="-fx-background-color: #cfeefb;" />
+      <TextField fx:id="quantity_txt" layoutX="556.0" layoutY="422.0" prefHeight="39.0" prefWidth="193.0" promptText="Quantity" style="-fx-background-color: #cfeefb;" stylesheets="@textColor.css">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField editable="false" layoutY="498.0" prefHeight="46.0" prefWidth="789.0" style="-fx-background-color: #cfeefb;" />
+      <Button layoutX="639.0" layoutY="502.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #0a0a47;" text="Donate" textFill="#e1056f">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="38.0" layoutY="502.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #0a0a47;" text="Back" textFill="#e1056f">
+         <font>
+            <Font size="18.0" />
          </font>
       </Button>
    </children>
