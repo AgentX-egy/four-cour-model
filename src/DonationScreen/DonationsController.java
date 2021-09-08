@@ -5,6 +5,8 @@
  */
 package DonationScreen;
 
+import Model.DonationType;
+import Model.DonationOption;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -34,6 +36,16 @@ import javafx.stage.Stage;
  */
 public class DonationsController implements Initializable {
    
+    ArrayList<DonationType> donationTypes;
+    ArrayList<DonationOption> options;
+    
+    private Object findObjectFromString(String toFind, ArrayList inList){
+        for (Object object : inList) {
+            if (object.equals(toFind))
+                return object;
+        }
+        return null;
+    }
     
     @FXML
     private void handleExitButtonAction(ActionEvent event){
@@ -82,17 +94,16 @@ public class DonationsController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/Scene2/Scene2.fxml"));
             Scene scene = new Scene(root);
             
-            int quantity = Integer.valueOf(((TextField)scene.lookup("quantity_txt")).getText().toString());
+            int quantity = Integer.valueOf(((TextField)scene.lookup("quantity_txt")).getText());
             String DonationType = ((ComboBox)scene.lookup("don_ops")).getValue().toString();
-            Model.Donation.makeDonation(DonationType, quantity);
+            DonationType dt = (DonationType) findObjectFromString(DonationType, donationTypes);
+            //Model.DonationType.makeDonation(dt.getDonationTypeID(), quantity);
             
-//            ((ComboBox)scene.lookup("don_ops")).setItems();
+//          ((ComboBox)scene.lookup("don_ops")).setItems();
             
         } catch (IOException ex) {
             Logger.getLogger(DonationsController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
+        }        
     }
     
     @Override
@@ -111,14 +122,15 @@ public class DonationsController implements Initializable {
                     }}});
             
             
-            ArrayList<Model.Donation> donationTypes = Model.Donation.getAllDonationTypes();
+            donationTypes = Model.DonationType.getAllDonationTypes();
             ((ComboBox)scene.lookup("don_type")).setItems((ObservableList) donationTypes);
             
             EventHandler handler = new EventHandler() {
                 @Override
                 public void handle(Event event) {
-                    String value = ((ComboBox)scene.lookup("don_type")).getValue().toString();
-                    ArrayList<Model.DonationOptions> options = Model.Donation.getAllDonationOptions(value);
+                    String valueS = ((ComboBox)scene.lookup("don_type")).getValue().toString();
+                    DonationType d = (DonationType) findObjectFromString(valueS, donationTypes);
+                    options = DonationType.getAllDonationOptions(d.getDonationTypeID());
                     ((ComboBox)scene.lookup("don_ops")).setItems((ObservableList) options);
                 }
             };
@@ -128,6 +140,5 @@ public class DonationsController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(DonationsController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }    
-    
+    }      
 }

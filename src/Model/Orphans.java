@@ -32,9 +32,7 @@ public class Orphans {
     public boolean isIsMale() {
         return isMale;
     }
-    
-    
-    
+        
     public static ArrayList<Orphans> getAllOrphans(){
         ResultSet rs = Orphans.viewAllOrphans();
         ArrayList<Orphans> productsList = new ArrayList<>();

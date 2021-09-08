@@ -18,10 +18,10 @@ import java.sql.SQLException;
 public class User {
 
     private static User singleton = null;
-    private int userid;
-    private String username;
-    private boolean isMale;
-    private boolean isMarried;
+    private final int userid;
+    private final String username;
+    private final boolean isMale;
+    private final boolean isMarried;
 
     private User(int userid, String username, boolean isMale, boolean isMarried) {
         this.userid = userid;

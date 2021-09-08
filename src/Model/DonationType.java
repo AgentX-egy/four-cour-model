@@ -8,30 +8,29 @@ package Model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  *
  * @author star_
  */
-public class Donation {
+public class DonationType {
 
     int donationTypeID;
     String donationType;
     String donationTypeUnit;
 
-    public Donation(int donationTypeID, String donationType, String donationTypeUnit) {
+    public DonationType(int donationTypeID, String donationType, String donationTypeUnit) {
         this.donationTypeID = donationTypeID;
         this.donationType = donationType;
         this.donationTypeUnit = donationTypeUnit;
     }
 
-    public static ArrayList<Donation> getAllDonationTypes() {
-        ResultSet rs = Donation.viewAllDonationTypes();
-        ArrayList<Donation> donationTypesList = new ArrayList<>();
+    public static ArrayList<DonationType> getAllDonationTypes() {
+        ResultSet rs = DonationType.viewAllDonationTypes();
+        ArrayList<DonationType> donationTypesList = new ArrayList<>();
         try {
             while (rs.next()) {
-                donationTypesList.add(new Donation(
+                donationTypesList.add(new DonationType(
                         rs.getInt(1), rs.getString(2), rs.getString(3))
                 );
             }
@@ -41,13 +40,13 @@ public class Donation {
         return donationTypesList;
     }
 
-    public static HashMap<Integer,String> getAllDonationOptions(int donationTypeID) {
-        ResultSet rs = Donation.viewAllDonationOptions(donationTypeID); 
-//error with the sql should get idoption and its value from another table using left join but I don't rememebr how to do it
-        HashMap<Integer,String> donationOptionsList = new HashMap<>();
+    public static ArrayList<DonationOption> getAllDonationOptions(int donationTypeID) {
+        ResultSet rs = DonationType.viewAllDonationOptions(donationTypeID);
+        ArrayList<DonationOption> donationOptionsList = new ArrayList<>();
         try {
             while (rs.next()) {
-                donationOptionsList.put(rs.getInt(1), rs.getString(2));
+                donationOptionsList.add(new DonationOption(
+                        rs.getInt(1), rs.getString(2)));
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
@@ -60,18 +59,30 @@ public class Donation {
                 "INSERT INTO `donation` (`iduser`, `iddonationoption`, `value`) VALUES ("
                 + String.valueOf(User.getUser().getuserID()) + ", "
                 + String.valueOf(donationOption) + ", "
-                + String.valueOf(value) + ";"
+                + String.valueOf(value) + ");"
         );
     }
 
     private static ResultSet viewAllDonationTypes() {
         return DBConnection.getInstance().sendSQL(
-                "SELECT iddonationtype,  donationtype, donationtypeunit FROM donationtype where Isdeleted=0;");
+                "SELECT iddonationtype,  donationtype, donationtypeunit "
+                + "FROM donationtype where Isdeleted=0;");
     }
 
     private static ResultSet viewAllDonationOptions(int donationID) {
         return DBConnection.getInstance().sendSQL(
-                "SELECT idoption FROM donationtypeoption where iddonationtype="
-                + String.valueOf(donationID) + " and Isdeleted=0;");
+                "Select idoption, optionname "
+                + "From donationtypeoption AS d,"
+                + "donationoptions AS a "
+                + "Where d.iddonationtype=" + String.valueOf(donationID)
+                + "and d.idoption=a.iddonationoption and Isdeleted=0;");
     }
+
+    public int getDonationTypeID() {
+        return donationTypeID;
+    }
+    
+    public boolean equals(String str) {
+        return this.donationType.equals(str);
+    } 
 }
