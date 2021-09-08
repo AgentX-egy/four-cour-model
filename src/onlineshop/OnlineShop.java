@@ -37,8 +37,7 @@ public class OnlineShop extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        DBConnection.createInstance("localhost", "3306", "assignment2");
+        DBConnection.createInstance("localhost", "3306", "ag_project");
         launch(args);
-    }
-    
+    }  
 }

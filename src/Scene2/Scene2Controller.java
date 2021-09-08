@@ -5,7 +5,8 @@
  */
 package Scene2;
 
-import Model.Products;
+import Model.Orphans;
+import Model.User;
 import Scene2.*;
 import java.io.IOException;
 import java.net.URL;
@@ -64,6 +65,7 @@ public class Scene2Controller implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             stage.setTitle("Profile");
+            ((TextField)scene.lookup("#Profile")).setText(User.getUser().getUsername());
             stage.setScene(scene);
             
         } catch (IOException ex) {
@@ -80,20 +82,20 @@ public class Scene2Controller implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/OrphanScreen/orphans.fxml"));
             Scene scene = new Scene(root);
             
-            /*ArrayList<Products> allProducts = Model.Products.getAllProducts();
-            System.out.println(allProducts.size());
+            ArrayList<Orphans> allOrphans = Model.Orphans.getAllOrphans();
+            System.out.println(allOrphans.size());
             int row = 0;
             int col = 0;
-            for(int i = 0; i < allProducts.size();i++){
+            for(int i = 0; i < allOrphans.size();i++){
                 if((i%2 == 0) && (i != 0) )
                 {
                     row++;
                     col =0;
                 }
-                btn = new Button(allProducts.get(i).getName());
+                btn = new Button(allOrphans.get(i).getName());
                 
                 btn.setMinWidth((((GridPane)scene.lookup("#dynamicGrid")).getPrefWidth() - 5)/2 - 5);
-                btn.setMinHeight(((GridPane)scene.lookup("#dynamicGrid")).getPrefHeight()/allProducts.size());
+                btn.setMinHeight(((GridPane)scene.lookup("#dynamicGrid")).getPrefHeight()/allOrphans.size());
                 btn.setStyle("-fx-background-color: #cfeefb;-fx-font-size : 18px;-fx-text-fill:#e1056f;");
                 
                 btn.setAlignment(Pos.CENTER);
@@ -104,7 +106,6 @@ public class Scene2Controller implements Initializable {
                 ((GridPane)scene.lookup("#dynamicGrid")).setAlignment(Pos.CENTER);
 
             }
-            */
             
 //            scene.getStylesheets().add(getClass().getResource("Products/buttonStyle.css").toExternalForm());
             

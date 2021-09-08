@@ -6,6 +6,7 @@
 package onlineshop;
 
 import Model.DBConnection;
+import Model.User;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,82 +22,67 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-
 /**
  *
  * @author kerol
  */
 public class FXMLDocumentController implements Initializable {
-   
-    
-  
-   
+
     @FXML
-    private void handleExitButtonAction(ActionEvent event){
+    private void handleExitButtonAction(ActionEvent event) {
         System.exit(0);
     }
-    
+
     @FXML
-    private void GotoRegister(ActionEvent event){
+    private void GotoRegister(ActionEvent event) {
         try {
-           
+
             Parent root = FXMLLoader.load(getClass().getResource("/RegisterScreen/register.fxml"));
 //            Parent root = FXMLLoader.load(getClass().getResource("/Register/register.fxml"));
             Scene scene = new Scene(root);
-            
-            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle("Register");
             stage.setScene(scene);
-            
+
         } catch (IOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @FXML
-    private void GotoSecond(ActionEvent event) throws IOException{
+    private void GotoSecond(ActionEvent event) throws IOException {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/Scene2/Scene2.fxml"));
             Scene scene = new Scene(root);
-            
-            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle("Home");
             stage.setScene(scene);
-            
+
         } catch (IOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @FXML
-    private void Login(ActionEvent event) throws IOException{
-        
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+    private void Login(ActionEvent event) throws IOException {
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene parentScene = stage.getScene();
-        String username = ((TextField)parentScene.lookup("#username_txt")).getText();
-        String password = ((TextField)parentScene.lookup("#pass_txt")).getText();
-        System.out.println(username);
-        System.out.println(password);        
-        DBConnection.createInstance("197.46.92.128", "3306", "assignment2");
-        int id = DBConnection.getInstance().getUserID(username, password);
-        
-        
-        
-        
-        if(id != -1){
+        String username = ((TextField) parentScene.lookup("#username_txt")).getText();
+        String password = ((TextField) parentScene.lookup("#pass_txt")).getText();
+        User.createUser(username, password);
+
+        if (User.getUser() != null) {
             GotoSecond(event);
+        } else {
+            System.err.println("wrong username and password");
         }
-        else{
-            System.out.println("wrong username and password");
-        }
-        
-        
     }
-    
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-    }    
-    
+
+    }
 }

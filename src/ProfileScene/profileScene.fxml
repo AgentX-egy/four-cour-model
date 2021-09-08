@@ -15,7 +15,7 @@
             <Image url="@profile.png" />
          </image>
       </ImageView>
-      <TextField alignment="CENTER" editable="false" layoutX="135.0" layoutY="249.0" prefHeight="57.0" prefWidth="471.0" style="-fx-background-color: #0a0a47;" stylesheets="@../Scene2/textColor.css" text="Profile">
+      <TextField fx:id="Profile" alignment="CENTER" editable="false" layoutX="135.0" layoutY="249.0" prefHeight="57.0" prefWidth="471.0" style="-fx-background-color: #0a0a47;" stylesheets="@../Scene2/textColor.css" text="Profile">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
