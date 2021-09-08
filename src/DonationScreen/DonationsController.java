@@ -122,6 +122,9 @@ public class DonationsController implements Initializable {
                     ((ComboBox)scene.lookup("don_ops")).setItems((ObservableList) options);
                 }
             };
+            
+            ((ComboBox)scene.lookup("don_type")).setOnAction(handler);
+            
         } catch (IOException ex) {
             Logger.getLogger(DonationsController.class.getName()).log(Level.SEVERE, null, ex);
         }
