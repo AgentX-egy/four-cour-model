@@ -1,0 +1,434 @@
+Contents:
+1)	User Management (L):	6
+1.1)	Log in:	6
+1.1.1)	Description:	7
+1.1.2)	Acceptance criteria:	7
+1.2) Controlling User type pages:	6
+1.2.1)	Description:	7
+1.2.2)	Acceptance criteria:	7
+1.3) Controlling User types:	6
+1.3.1)	Description:	7
+1.3.2)	Acceptance criteria:	7
+1.4) Telephone Number addition:	6
+1.4.1)	Description:	7
+1.4.2)	Acceptance criteria:	7
+1.5) User pages hierarchy:	6
+1.5.1)	Description:	7
+1.5.2)	Acceptance criteria:	7
+1.6) View User Address:	6
+1.6.1)	Description:	7
+1.6.2)	Acceptance criteria:	7
+1.7) User Address Hierarchy:	6
+1.7.1)	Description:	7
+1.7.2)	Acceptance criteria:	7
+1.8) View User Information:	6
+1.7.1)	Description:	7
+1.7.2)	Acceptance criteria:	7
+2)	Orphan Management System (L):	6
+2.1) Orphans Management:	7
+2.1.1)	Description:	7
+2.1.2)	Acceptance criteria:	7
+2.2) Orphans hobby Management:	7
+2.2.1)	Description:	7
+2.2.2)	Acceptance criteria	7
+2.3) View Orphans hobby Activity:	7
+2.3.1)	Description:	7
+2.3.2)	Acceptance criteria:	7
+2.4) View Orphans:	7
+2.4.1)	Description:	7
+2.4.2)	Acceptance criteria:	7
+2.5) View Orphans Information:	7
+2.5.1)	Description:	7
+2.5.2)	Acceptance criteria:	7
+2.6) Control Orphans Health Status:	7
+2.6.1)	Description:	7
+2.6.2)	Acceptance criteria:	7
+2.7) Add Health Types:	7
+2.5.1)	Description:	7
+2.5.2)	Acceptance criteria:	7
+2.8) Orphans Health Status Log:	7
+2.5.1)	Description:	7
+2.5.2) Acceptance criteria:	7
+3)	Donation Management (L):	6
+3.1) Donation Methods:	7
+3.1.1)	Description:	7
+3.1.2)	Acceptance criteria:	7
+3.2) Donation Methods Requirements:	7
+3.2.1)	Description:	7
+3.2.2)	Acceptance criteria:	7
+3.3) Donation Process:	7
+3.3.1)	Description:	7
+3.3.2)	Acceptance criteria:	7
+3.4) View Donations:	7
+3.4.1)	Description:	7
+3.4.2) Acceptance criteria:	7
+4)	Transactions Details (M):	6
+4.1) Data Tracking:	7
+4.1.1)	Description:	7
+4.1.2)	Acceptance criteria:	7
+4.2) Data Deletion:	7
+4.2.1)	Description:	7
+4.2.2)	Acceptance criteria:	7
+4.3) Data Creation:	7
+4.3.1)	Description:	7
+4.3.2)	Acceptance criteria:	7
+5)	Themes, Messages, and error handling (M):	6
+5.1) Customized Themes:	7
+5.1.1)	Description:	7
+5.1.2)	Acceptance criteria:	7
+5.2) Error Messages:	7
+5.2.1)	Description:	7
+5.2.2)	Acceptance criteria:	7
+5.3) Emails:	7
+5.3.1)	Description:	7
+5.3.2)	Acceptance criteria:	7
+5.4) Message Types Management:	7
+5.4.1)	Description:	7
+5.4.2)	Acceptance criteria:	7
+5.5) Message Control:	7
+5.4.1)	Description:	7
+5.4.2)	Acceptance criteria:	7
+6)	Vocabulary and language (L):	6
+6.1) Language Management:	7
+6.1.1)	Description:	7
+6.1.2)	Acceptance criteria:	7
+6.2) Vocabulary Management:	7
+6.2.2)	Description:	7
+6.2.2) Acceptance criteria:	7
+6.3) System Translation Management:	7
+6.3.1)	Description:	7
+6.3.2)	Acceptance criteria:	7
+7)	Customized Reports (M):	6
+7.1) Report Customization:	7
+7.1.1)	Description:	7
+7.1.2) Acceptance criteria:	7
+8)	UX (L):	6
+8.1) System Status Visibility:	6
+8.1.1)	Description:	7
+8.1.2) Acceptance criteria:	7
+8.2) Recognition Search:	6
+8.1.1)	Description:	7
+As a User, I would like to be assisted by the system while searching so that I can use the search more smoothly and easily	7
+8.1.2) Acceptance criteria:	7
+8.3) User Control Freedom:	6
+8.1.1)	Description:	7
+As a user, I would like to able to go back and forth or exiting so that I can have freedom in navigation	7
+8.1.2) Acceptance criteria:	7
+8.4) Error Prevention:	6
+8.1.1)	Description:	7
+As an admin, I would like the system to show warning at cases of possible error so that we can minimize errors done by users	7
+8.1.2) Acceptance criteria:	7
+8.5) Aesthetic and minimalist design:	6
+8.1.1)	Description:	7
+As an admin, I would like the system page to contain no more than 8 features so that I can access functionalities easily.	7
+8.1.2) Acceptance criteria:	7
+8.6) Error diagnosis and recovery:	6
+8.1.1)	Description:	6
+As a user, I would like to be assisted by the system in the case of error with error cause so that I can view this cause and suggestion to recovery.	6
+8.1.2) Acceptance criteria:	6
+8.7) UI Documentation:	7
+8.1.1)	Description:	7
+As a user, I would like to the system to give me some hints while using the features so that I can view them.	7
+8.1.2) Acceptance criteria:	7
+
+ 
+1)	User Management (L):
+1.1)	Log in:
+1.1.1)	Description:
+As a user of the system, I would like to able to log-in with my account so that I can use the functionalities of my account
+1.1.2)	Acceptance criteria:
+1.	If the user credentials are right then user account should be logged in into the system according to the type of this account.
+2.	if the user credentials are not valid then an error message should be shown specifying that the credential are not right.
+3.	When the user enters the right credentials using the sign in button, he should be directed to page with the functionalities according to this account type
+4.	If the user Clicks on the sign-up button, he should be directed to the registration page.
+
+1.2) Controlling User type pages:
+1.2.1)	Description:
+As an admin, I would like to able to set the pages of the system that each user type can access so that these users can access these system Functionalities only
+1.2.2)	Acceptance criteria:
+1.	By Using the adjust user-type pages in admin page, the admin can set the pages group that this user type can access.
+2.	Admin chooses from the list of pages available in the system as shown, then saves.
+3.	when the admin saves, he is redirected to the same screen to add more pages for this user-type if he wants to.
+4.	after edit the new info should be saved so that any account of this type should be able to access these pages.
+
+1.3) Controlling User types:
+1.3.1)	Description:
+As an admin, I would like to able to CRUD the types of users in the system so that I can control the pool of user types in the system
+1.3.2)	Acceptance criteria:
+1.	By Clicking on adjust user-types button in admin page, the admin can add a new user type to the system or choose to update an existing one.
+2.	The added user-type should be saved so that it can be assigned to users later on
+
+1.4) Telephone Number addition:
+1.4.1)	Description:
+As an admin, I would like to able to add a telephone number on the system of the user so that I am able to retrieve if needed
+1.4.2)	Acceptance criteria:
+1.	By Clicking on Add Telephone to user button on admin screen, The admin is redirected telephone number addition page.
+2.	The admin should enter the telephone number, User ID, and his name.
+3.	admin can add telephone number to a user and it is saved on the system
+4.	Telephone numbers is optional which means a user can enter a telephone number or not.
+(Developer Note: Telephone number is optional, Separate table to prevent nulls)
+1.5) User pages hierarchy:
+1.5.1)	Description:
+As an admin, I would like to able to control the hierarchy in which each user type can view his pages so that the user is directed through his pages with ease.
+1.5.2)	Acceptance criteria:
+1.	User pages accessibility should be saved hierarchically in the system so that the user is able to navigate through the system with ease.
+2.	the user should navigate through pages only through this order
+3.	The structure should be flexible enough so that we can add or delete pages to reflect on navigation process. (Developer note: Self reference key structure)
+
+1.6) View User Address:
+1.6.1)	Description:
+As an admin, I would like to able to view user addresses so that I can retrieve the user by his country, city, street address.
+1.6.2)	Acceptance criteria:
+1.	By clicking on Get address button in the admin pages, The admin is directed to a list of addresses of users.
+2.	He can retrieve the address by their location group or address of a certain user.
+3.	admin can retrieve the user address hierarchy either from his country, city, street address.
+
+1.7) User Address Hierarchy:
+1.7.1)	Description:
+As an admin, I would like to able to view the user addresses so that I can retrieve the user by his country, city, street address.
+1.7.2)	Acceptance criteria:
+1.	User address should be saved hierarchically in a similar way to the picture where the address can consist of country, city, district
+2.	we should be able to flexibly add more parts to address flexibly like street and building number. (Developer note: Self reference key structure)
+
+1.8) View User Information:
+1.7.1)	Description:
+As an admin, I would like to able to view user information on the system so that I can retrieve information about these users.
+1.7.2)	Acceptance criteria:
+1.	By clicking on the view users’ button in admin page, a list should be shown to the user with the available users.
+2.	Admin can search for a certain user in this list to retrieve his information if needed.
+
+
+
+2)	Orphan Management System (L):
+2.1) Orphans Management:
+2.1.1)	Description:
+As an admin, I would like to able to CRUD orphan’s information so that I can control the orphan’s information in the orphan house.
+2.1.2)	Acceptance criteria:
+1.	By Clicking on the Add New Orphan button on admin page, admin should be directed to a page where he can enter the orphan information.
+2.	The orphan is added to the system and his information is saved.
+2.2) Orphans hobby Management:
+2.2.1)	Description:
+As a caretaker, I Would like to be able to CRUD hobbies for the orphans so that I can control the orphans hobbies.
+2.2.2)	Acceptance criteria
+1.	By using Add new Hobby button on care taker page, The care taker should be directed to add a hobby page.
+2.	The Care taker should choose one of the available hobbies to assign it to an orphan by entering his ID and name.
+3.	An orphan can have hobby or more than one hobby or not have a hobby at all. 
+4.	(Developer Note: Hobbies are optional, should be stored separately in a table to avoid nulls)
+5.	Every Orphan can have a maximum of three hobbies.
+2.3) View Orphans hobby Activity:
+2.3.1)	Description:
+As an admin, I would like to able to view orphans hobby so that I can retrieve hobbies statistics being played by orphans
+2.3.2)	Acceptance criteria:
+By Clicking on view Hobby activity button in admin page, the admin is redirected to page that has a log containing the hobbies and who played this hobby and when.
+
+2.4) View Orphans:
+2.4.1)	Description:
+As a user, I would like to be able to view the orphans in the orphan house so that I can see the profile of certain orphan for more details
+2.4.2)	Acceptance criteria:
+1.	By clicking on the view orphans’ button on the user page, a page containing the orphans available for adoption is shown
+2.	View more button shows more orphans while the back button redirects us back.
+3.	The user can use the search bar to search for orphans by their name or age group.
+
+2.5) View Orphans Information:
+2.5.1)	Description:
+As an admin, I would like to able to view orphans’ information so that I can retrieve information about all the orphans in the orphan house.
+2.5.2)	Acceptance criteria:
+1.	By clicking on the view orphan’s info button on the admin page, a list containing the orphans and their information should be shown
+2.	The admin can search for a certain orphan by his name in this list.
+
+2.6) Control Orphans Health Status:
+2.6.1)	Description:
+As a care taker, I would like to able to update the health status of the orphans so that I can retrieve the current health status of an orphan.
+2.6.2)	Acceptance criteria:
+1.	After Clicking on the Update Health Status Button in Caretaker page, the care taker should be able to update the health status of orphans.
+2.	The Care taker chooses one of the health-types on the system, and then enter the child ID and name.
+3.	Upon Saving the health status of this child should be updated.
+
+2.7) Add Health Types:
+2.5.1)	Description:
+As an admin, I would like to be able to add health types on the system so that I can assign them to orphans if needed.
+2.5.2)	Acceptance criteria:
+By clicking on the Add Health Status Types on the admin page, The admin should be able to enter a new type name.
+
+2.8) Orphans Health Status Log:
+2.5.1)	Description:
+As an admin, I would like to be able to view orphans’ health status so that I can retrieve them if needed.
+2.5.2) Acceptance criteria:
+1.	By clicking on the View Health Status Log button on the admin page, the admin should be re-directed to page containing a list of the health logs of the orphans
+2.	The list Should contain health states of the orphans and when did they get sick
+3.	Admin can search for a certain orphan by his name or ID in the list using the search bar.
+3)	Donation Management (L):
+3.1) Donation Methods:
+3.1.1)	Description:
+As an admin, I would like to able to flexibly (CRUD) the methods of donation so that I can control methods to donate on system.
+3.1.2)	Acceptance criteria:
+1.	By Clicking on Add donation Methods button on admin page, The admin is redirected to a page where he can new donation methods
+2.	donation methods should be added on the system so that users can donate using them
+
+3.2) Donation Methods Requirements:
+3.2.1)	Description:
+As an admin, I would like to be able to flexibly CRUD the information needed for each payment method so that I can control the requirements needed to make a donation successful
+3.2.2)	Acceptance criteria:
+1.	Upon adding a new donation method, options or requirements for these methods should be added
+2.	The admin should enter the donation type.
+3.	Admin choose then choose the options for this donation type from the combo box.
+4.	If an option is not available, it can be added by entering the option name and then a choosing a type for this option from the combo box below.
+5.	The new donation methods should be added on the system upon saving so that users can donate using it.
+(Developer Note: Since every Donation method has different options we should use the EAV method so that the admin can flexibly add donations methods as he likes)
+
+3.3) Donation Process:
+3.3.1)	Description:
+As a user, I would like to be able to use donation methods on the system so that I can make donations to the orphan house.
+3.3.2)	Acceptance criteria:
+1.	When the user clicks on donate, He/she should be directed to a page to complete the donation process
+2.	In this page the user should be able to choose the donation type from the combo box.
+3.	Then the user can view the options needed to be filled from the options combo box.
+4. Then finally the user should enter the donation value in the value text field
+
+3.4) View Donations:
+3.4.1)	Description:
+As an admin, I would like to be able view the donation details that I can retrieve the donations done on the system.
+3.4.2) Acceptance criteria:
+1.	Upon clicking on the view donation button on admin page, the admin should be directed to a page containing a list with all the donations done on the system
+
+
+4)	Transactions Details (M):
+4.1) Data Tracking:
+4.1.1)	Description:
+As an admin, I would like to able to view any transactions done on the data by the users so that I can retrieve the changes log and who did them and when.
+4.1.2)	Acceptance criteria:
+1.	System Should contain a log tracking data change
+2.	Log should show all changes done on the data in a message and who did this change and when.
+
+4.2) Data Deletion:
+4.2.1)	Description:
+As an admin, I would like to mark info as deleted but not actually delete them so that I can view them later if needed.
+4.2.2)	Acceptance criteria:
+1.	Data should not be deleted physically from our system but should only be marked as deleted
+2.	Marked as Deleted data should still be retrieved by the admin
+3.	If the Mark is 0 or False then the data is not deleted While 1 or True means that the data is marked as deleted.
+
+4.3) Data Creation:
+4.3.1)	Description:
+As an admin, I would like to able to see when was the data created on the system so that I can retrieve data creation history.
+4.3.2)	Acceptance criteria:
+1.	When data is created on the system, a current time stamp of creation time should be given to the data.
+2.	Admin can track when was the data created on the system.
+
+5)	Themes, Messages, and error handling (M):
+5.1) Customized Themes:
+5.1.1)	Description:
+As an admin, I would like to able to flexibly customize page’s themes so that it can be edited later on and shown to users on updates.
+5.1.2)	Acceptance criteria:
+1.	Admin can customize page themes flexibly without having to change the code.
+2.	The Theme us updated and shown to the users on further interaction.
+3.	The admin should be able to change several factors such as name of interfaces, Colour, Position, Background colour, and also the text colour
+(Developer Note: Admin can change themes without code change so the interfaces information should be stored on file or in DB and reflect on code)
+5.2) Error Messages:
+5.2.1)	Description:
+As an admin, I would like to able to flexibly customize the error messages that is shown to users on certain events so that I can edit them if needed.
+5.2.2)	Acceptance criteria:
+1.	By Clicking on Edit Messages button in admin pages, the admin can edit the saved messages syntax.
+2.	First the admin is directed to a page where he can choose the message type, after choosing the type the admin is redirected to a page containing a list of all the saved errors in the system
+3.	In this page the admin can search for a certain error in the search bar by entering the error name or code ( Such as; Log in error message)
+4.	The admin can edit the message he chooses and it should be saved on the system for further usage
+
+5.3) Emails:
+5.3.1)	Description:
+As an admin, I would like to able to flexibly customize the emails form and text so that it can edited later on.
+5.3.2)	Acceptance criteria:
+1.	By Clicking on Edit Messages button in admin pages, the admin can edit the saved messages syntax.
+2.	First the admin is directed to a page where he can choose the message type, after choosing the type the admin is redirected to a page containing a list of all the saved errors in the system
+3.	In this page the admin can search for a certain error in the search bar by entering the error name or code (Such as; Log in error message)
+4.	The admin can edit the message he chooses and it should be saved on the system for further usage
+
+5.4) Message Types Management:
+5.4.1)	Description:
+As an admin, I would like to able to add new message types to the system so that I can use them to specify messages later on.
+5.4.2)	Acceptance criteria:
+1.	By clicking on the add new message types, Admin is redirected to a page where he can add new message types.
+2.	The added type should be shown in the message types combo box
+5.5) Message Control:
+5.4.1)	Description:
+As an admin, I Would like to be able to CRUD new Message forms into the system so that I can retrieve them later on.
+5.4.2)	Acceptance criteria:
+1.	By Clicking on the add new message button, Admin should be directed to page where he can add the message text.
+2.	Admin should the message type from the available type in the combo box.
+3.	Then admin should enter the message syntax in the text box and then press save.
+6)	Vocabulary and language (L):
+6.1) Language Management:
+6.1.1)	Description:
+As an admin, I would like to able to flexibly add languages to the system so that users can view the system in the appropriate language for them.
+6.1.2)	Acceptance criteria:
+1.	By Clicking on add new language button in the admin page, The admin can add a new language to the system.
+2.	The language is offered to the user to choose it from the available types.
+
+6.2) Vocabulary Management:
+6.2.2)	Description:
+As an admin, I would like to able to add new vocabulary in different languages in the system flexibly so that it can be used in the system and shown for the users when needed.
+6.2.2) Acceptance criteria:
+1.	By Clicking on Add words to System button on admin page, The admin is redirected to add words page.
+2.	The admin should enter the word and choose the language for this word
+3.	Then enter the Word in the corresponding language and choose this language in the combo box.
+4.	The admin should be added new words or sentences to be displayed in the system.
+6.3) System Translation Management:
+6.3.1)	Description:
+As a user, I would like to be able to choose the language I want from the offered languages so that I can view the the system in these language.
+6.3.2)	Acceptance criteria:
+1.	By choosing a language from the language combo-box options in the user page, the user page should be translated to the language he chosen.
+2.	All the words present in system should be translated from the first language to the language the user had chosen for this user.
+
+7)	Customized Reports (M):
+7.1) Report Customization:
+7.1.1)	Description:
+As a user of the system, I would like to be able to customize a report from the options available so that I can be able the information needed easily
+7.1.2) Acceptance criteria:
+1) User should be able to customize a report
+2) The report should be saved for this user so that he can retrieve easily again if needed
+8)	UX (L):
+8.1) System Status Visibility:
+8.1.1)	Description:
+As a user of the system, I would like to see the system status so that I can use system with ease.
+8.1.2) Acceptance criteria:
+1.	Whenever the system is loading, updating, a progress bar should be shown to the user to avoid confusion
+8.2) Recognition Search:
+8.1.1)	Description:
+As a User, I would like to be assisted by the system while searching so that I can use the search more smoothly and easily
+8.1.2) Acceptance criteria:
+1.	When the user enters a part of the word, He/she should be assisted by the system by giving him possible search examples
+2.	This should be implemented for every search bar option in the system.
+8.3) User Control Freedom:
+8.1.1)	Description:
+As a user, I would like to able to go back and forth or exiting so that I can have freedom in navigation
+8.1.2) Acceptance criteria:
+1.	Users Should be able to navigate freely through the website
+2.	All the pages should conation back or exit button to ensure user freedom and to recover if he accessed the wrong page
+3.	Exit buttons should exit the page completely while back button enables the user to go to the previous page if needed.
+8.4) Error Prevention:
+8.1.1)	Description:
+As an admin, I would like the system to show warning at cases of possible error so that we can minimize errors done by users
+8.1.2) Acceptance criteria:
+1.	At Scenarios that may possibly cause errors in the system, The users should receive a warning telling them that this may cause an error and why. 
+2.	The picture is a warning message design to be user friendly for the various error warning.
+8.5) Aesthetic and minimalist design:
+8.1.1)	Description:
+As an admin, I would like the system page to contain no more than 8 features so that I can access functionalities easily.
+8.1.2) Acceptance criteria:
+1.	All pages should contain less than 8 features
+2.	if a certain page like the admin page has more than 8 features it can be broken down to several pages as shown.
+8.6) Error diagnosis and recovery:
+8.1.1)	Description:
+As a user, I would like to be assisted by the system in the case of error with error cause so that I can view this cause and suggestion to recovery.
+8.1.2) Acceptance criteria:
+1.	When an error occurs, the error recognition message should be shown to the user with a suggestive help to fix the error.
+2.	If an unknown error occurs the unknown error message should be shown to the users
+3.	The error messaged shown to the user differ according to the type of the error.
+8.7) UI Documentation:
+8.1.1)	Description:
+As a user, I would like to the system to give me some hints while using the features so that I can view them.
+8.1.2) Acceptance criteria:
+1.	The hints should be shown as a small text or link that the user can user under the feature to assist user in his usage experience.
+
+
+
+
